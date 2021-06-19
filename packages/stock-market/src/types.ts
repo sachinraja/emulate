@@ -27,4 +27,5 @@ export type SMFunc = (adapter: Adapter, ...args: any[]) => any
 
 export interface Adapter {
   getStock(ticker: string): Promise<Stock | undefined>
+  changeStock(ticker: string, info: Stock): Promise<Stock | undefined>
 }

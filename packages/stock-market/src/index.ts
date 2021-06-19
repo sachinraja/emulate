@@ -3,20 +3,26 @@ import type { Adapter, RemoveOverloading, RestOfParameters } from './types'
 
 export const createStockMarket = <T extends Adapter>(adapter: T) => {
   const smFunctions = {
-    async getMarketCapOf(
-      ...args: RestOfParameters<typeof functions['getMarketCapOf']>
+    async getMarketCap(
+      ...args: RestOfParameters<typeof functions['getMarketCap']>
     ) {
-      return functions.getMarketCapOf(adapter, ...args)
+      return functions.getMarketCap(adapter, ...args)
     },
 
     async buy(...args: RestOfParameters<typeof functions['buy']>) {
       return functions.buy(adapter, ...args)
     },
 
-    async getBuyCostFor(
-      ...args: RestOfParameters<typeof functions['getBuyCostFor']>
+    async getBuyCost(
+      ...args: RestOfParameters<typeof functions['getBuyCost']>
     ) {
-      return functions.getBuyCostFor(adapter, ...args)
+      return functions.getBuyCost(adapter, ...args)
+    },
+
+    async getCalculatedSharePrice(
+      ...args: RestOfParameters<typeof functions['getCalculatedSharePrice']>
+    ) {
+      return functions.getCalculatedSharePrice(adapter, ...args)
     },
   }
 

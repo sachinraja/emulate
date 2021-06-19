@@ -1,3 +1,4 @@
-export { default as getMarketCapOf } from './getMarketCapOf'
+export { default as getMarketCap } from './getMarketCap'
 export { default as buy } from './buy'
-export { default as getBuyCostFor } from './getBuyCostFor'
+export { default as getBuyCost } from './getBuyCost'
+export { default as getCalculatedSharePrice } from './getCalculatedSharePrice'

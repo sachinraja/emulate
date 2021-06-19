@@ -1,13 +1,11 @@
 import makeSMFunc from '../helpers/makeSMFunc'
 import { Stock } from '../types'
 
-const getBuyCostFor = makeSMFunc(
+const getCalculatedSharePrice = makeSMFunc(
   async (adapter, stock: Stock, count: number, price?: number) => {
-    stock.shareCount += count
-
     const sharePrice = price ?? stock.sharePrice
-    return count * sharePrice
+    return sharePrice + sharePrice * (count / stock.shareCount)
   },
 )
 
-export default getBuyCostFor
+export default getCalculatedSharePrice

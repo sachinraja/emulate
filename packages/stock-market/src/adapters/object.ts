@@ -10,5 +10,9 @@ export const createObjectAdapter = (defaultObj: StocksObject = {}) => {
     async getStock(ticker) {
       return data[ticker]
     },
+    async changeStock(ticker, info) {
+      data[ticker] = info
+      return info
+    },
   })
 }

@@ -1,6 +1,6 @@
 import { createObjectAdapter } from '../src/adapters/object'
 import { createStockMarket } from '../src'
-import { Stock, StockMarketWithAdapter } from '../src/types'
+import type { Stock, StockMarketWithAdapter } from '../src/types'
 
 let stockMarket: StockMarketWithAdapter<ReturnType<typeof createObjectAdapter>>
 
@@ -13,12 +13,12 @@ beforeEach(() => {
   stockMarket = createStockMarket(objectAdapter)
 })
 
-describe('getMarketCapOf', () => {
+describe('getMarketCap', () => {
   it('works with object adapter', async () => {
     const AMZN = (await stockMarket.getStock('AMZN')) as Stock
     const GOOGL = (await stockMarket.getStock('GOOGL')) as Stock
 
-    expect(await stockMarket.getMarketCapOf(AMZN)).toBe(500000)
-    expect(await stockMarket.getMarketCapOf(GOOGL)).toBe(9000)
+    expect(await stockMarket.getMarketCap(AMZN)).toBe(500000)
+    expect(await stockMarket.getMarketCap(GOOGL)).toBe(9000)
   })
 })
