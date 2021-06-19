@@ -1,0 +1,32 @@
+{
+  "name": "@emulate/stock-market",
+  "version": "1.0.0",
+  "description": "Emulate a stock market.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "gen:declaration": "tsc -p tsconfig.build.json",
+    "babelify": "babel src -d dist --extensions .ts --root-mode upward",
+    "prebuild": "rimraf dist",
+    "build": "npm run gen:declaration && npm run babelify",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sachinraja/emulate.git"
+  },
+  "keywords": [
+    "emulate",
+    "stock",
+    "market"
+  ],
+  "author": "Sachin Raja <sachinraja2349@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sachinraja/emulate/issues"
+  },
+  "homepage": "https://github.com/sachinraja/emulate/blob/main/packages/stock-market#readme"
+}
